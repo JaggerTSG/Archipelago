@@ -36,6 +36,10 @@ all_item_data = [
 ]
 
 events: list[tuple[str, ItemClassification, str, str]] = [
-    ("Victory", ItemClassification.progression, OperationsDeck.name, "Victory"),
+    ("Victory", ItemClassification.progression, OperationsDeck.name, "Victory"),,
+    ("Arachnus", ItemClassification.progression, Sector4PumpControl.name, "Arachnus Defeated"),
+    ("Data Courtyard Tunnel", ItemClassification.progression, Sector4PumpControl.name, "Data Courtyard Tunnel Opened"),
+    ("Nettori", ItemClassification.progression, Sector4PumpControl.name, "Nettori Defeated"),
+    ("BOX1", ItemClassification.progression, Sector4PumpControl.name, "BOX1 Defeated")
     ("Pump Control", ItemClassification.progression, Sector4PumpControl.name, "Pump Control Activated")
 ]
