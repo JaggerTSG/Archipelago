@@ -40,6 +40,15 @@ class HasChargeBeam(Requirement):
 class HasWaveBeam(Requirement):
     items_needed = ["Wave Beam"]
 
+class HasWideBeam(Requirement):
+    items_needed = ["Wide Beam"]
+
+class HasPlasmaBeam(Requirement):
+    items_needed = ["Plasma Beam"]
+
+class HasIceBeam(Requirement):
+    items_needed = ["Ice Beam"]
+
 #endregion
 
 #region Combined Item Requirements
@@ -408,6 +417,12 @@ class CanAccessWallJumpTutorialWithWallJump(Requirement):
         Requirement(["Morph Ball", "Hi-Jump"], [CanDoSimpleWallJump]),
         Requirement(["Morph Ball", "Bomb Data"], [CanDoSimpleWallJump]),
     ]
+
+class CanAccessWateringHole(Requirement):
+    items_needed = ["Gravity Suit", "Speed Booster"]
+    other_requirements = [
+        CanBallJumpRequirement([], [HasChargeBeam, HasWideBeam, HasWaveBeam, HasPlasmaBeam, HasScrewAttack]),
+    ]
 #endregion
 
 #region Sector 2 Individual Requirements
@@ -421,15 +436,6 @@ class CanReachOasisStorage(Requirement):
 class CanAccessZazabiSpeedway(Requirement):
     items_needed = ["Space Jump", "Speed Booster", "Screw Attack"]
     other_requirements = [CanFightBoss]
-
-class CanAccessWateringHole(Requirement):
-    items_needed = ["Gravity Suit", "Speed Booster"]
-    other_requirements = [
-        Requirement(["Charge Beam"], [CanBallJump]),
-        Requirement(["Plasma Beam"], [CanBallJump]),
-        Requirement(["Missile Data"], [CanBallJump])
-
-    ]
 
 class CanBacktrackToCultivationStation(Requirement):
     other_requirements = [
@@ -568,6 +574,26 @@ class CanAccessRipperTreasure(Requirement):
 #endregion
 
 #region Event Requirements
+class CanDefeatArachnusRequirement(Requirement):
+    def __init__(self, items_needed, other_requirements, energy_tanks_needed=0):
+        super().__init__(items_needed, other_requirements, energy_tanks_needed)
+        self.items_needed.append("Arachnus Defeated")
+        
+class CanOpenCourtyardTunnelRequirement(Requirement):
+    def __init__(self, items_needed, other_requirements, energy_tanks_needed=0):
+        super().__init__(items_needed, other_requirements, energy_tanks_needed)
+        self.items_needed.append("Data Courtyard Tunnel Opened")
+        
+class CanDefeatNettoriRequirement(Requirement):
+    def __init__(self, items_needed, other_requirements, energy_tanks_needed=0):
+        super().__init__(items_needed, other_requirements, energy_tanks_needed)
+        self.items_needed.append("Nettori Defeated")
+        
+class CanDefeatBOX1Requirement(Requirement):
+    def __init__(self, items_needed, other_requirements, energy_tanks_needed=0):
+        super().__init__(items_needed, other_requirements, energy_tanks_needed)
+        self.items_needed.append("BOX1 Defeated")
+        
 class CanDrainAQARequirement(Requirement):
     def __init__(self, items_needed, other_requirements, energy_tanks_needed=3):
         super().__init__(items_needed, other_requirements, energy_tanks_needed)
