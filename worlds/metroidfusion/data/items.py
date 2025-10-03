@@ -1,5 +1,9 @@
 from BaseClasses import ItemClassification
 from .logic.regions.Sector4 import Sector4PumpControl
+from .logic.regions.Sector3 import Sector3BOXZone
+from .logic.regions.Sector2 import Sector2NettoriZone
+from .logic.regions.Sector2 import Sector2Hub
+from .logic.regions.MainDeck import LowerArachnusArena
 from .logic.regions.MainDeck import OperationsDeck
 
 all_item_data = [
@@ -37,9 +41,9 @@ all_item_data = [
 
 events: list[tuple[str, ItemClassification, str, str]] = [
     ("Victory", ItemClassification.progression, OperationsDeck.name, "Victory"),,
-    ("Arachnus Defeated", ItemClassification.progression, ArachnusDefeated.name, "Arachnus Defeated"),
-    ("Data Courtyard Tunnel", ItemClassification.progression, DataCourtyardTunnel.name, "Data Courtyard Tunnel Opened"),
-    ("Nettori Defeated", ItemClassification.progression, NettoriDefeated.name, "Nettori Defeated"),
-    ("BOX1 Defeated", ItemClassification.progression, BOX1Defeated.name, "BOX1 Defeated")
+    ("Arachnus Defeated", ItemClassification.progression, LowerArachnusArena.name, "Arachnus Defeated"),
+    ("Data Courtyard Tunnel", ItemClassification.progression, Sector2Hub.name, "Data Courtyard Tunnel Opened"),
+    ("Nettori Defeated", ItemClassification.progression, Sector2Nettori.name, "Nettori Defeated"),
+    ("BOX1 Defeated", ItemClassification.progression, Sector3BOXZone.name, "BOX1 Defeated")
     ("Pump Control", ItemClassification.progression, Sector4PumpControl.name, "Pump Control Activated")
 ]
